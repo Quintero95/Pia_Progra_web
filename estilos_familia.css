@@ -1,0 +1,36 @@
+/* Estilos para el cuerpo de la página */
+body {
+    font-family: Arial, sans-serif; /* Fuente */
+  }
+  
+  /* Estilos para el encabezado */
+  h1 {
+    color: #37047584; /* Color del título */
+  }
+  
+  /* Estilos para los párrafos */
+  p {
+    color: #c71616; /* Color del texto */
+  }
+  
+  /* Estilos para la sección de educación */
+  .education {
+    background-image: url('fondo_educacion.jpg'); /* Fondo de la sección */
+    color: #ffffff; /* Color del texto */
+    padding: 20px; /* Espaciado interno */
+  }
+  
+  /* Estilos para la sección de experiencia laboral */
+  .experience {
+    background-image: url('fondo_experiencia.jpg'); /* Fondo de la sección */
+    color: #234d33; /* Color del texto */
+    padding: 20px; /* Espaciado interno */
+  }
+  
+  /* Estilos para la lista de intereses */
+  .interests {
+    background-image: url('fondo_intereses.jpg'); /* Fondo de la sección */
+    color: #100303; /* Color del texto */
+    padding: 20px; /* Espaciado interno */
+  }
+  

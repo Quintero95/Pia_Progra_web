@@ -1,0 +1,104 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  background-color: #007bff;
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.logo {
+  margin: 0;
+  font-size: 36px; /* Aumentar el tamaño del texto del logo */
+}
+
+.section {
+  padding: 20px;
+  max-width: 800px; /* Establecer un ancho máximo para centrar el contenido */
+  margin: 0 auto; /* Centrar el contenido horizontalmente */
+}
+
+.section-title {
+  text-align: center;
+  font-size: 24px; /* Aumentar el tamaño del texto del título de la sección */
+}
+
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-gap: 20px;
+}
+
+.image-link {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.image-link:hover {
+  transform: scale(1.05);
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 123, 255, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.image-link:hover .image-overlay {
+  opacity: 1;
+}
+
+.overlay-text {
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.footer {
+  background-color: #007bff;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+}
+
+.footer-link {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer-link:hover {
+  text-decoration: underline;
+}
+
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 20px;
+  justify-content: center;
+}
+
+.image-grid:nth-child(2) {
+  margin-top: 20px; /* Ajuste para separar las dos filas */
+}
+

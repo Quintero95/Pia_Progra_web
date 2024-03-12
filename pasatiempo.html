@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Pasatiempos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+        }
+
+        li:hover {
+            background-color: #e0e0e0;
+        }
+
+        #nombreSeleccionado {
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Mis Pasatiempos</h1>
+        <h2>Nombres:</h2>
+        <ul id="nombres">
+            <!-- Aquí puedes insertar los nombres que ingresaste anteriormente -->
+            <li>Luis García Escobedo</li>
+            <li>María García</li>
+            <li>Carlos Escobedo</li>
+            <li>Fernanda García Escobedo</li>
+        </ul>
+        <input type="text" id="nuevoPasatiempo" placeholder="Ingrese un nuevo pasatiempo">
+        <button id="agregarPasatiempo">Agregar Pasatiempo</button>
+        <div id="nombreSeleccionado"></div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var nombresList = document.getElementById('nombres');
+            var nuevoPasatiempoInput = document.getElementById('nuevoPasatiempo');
+            var agregarPasatiempoBtn = document.getElementById('agregarPasatiempo');
+            var nombreSeleccionadoDiv = document.getElementById('nombreSeleccionado');
+
+            nombresList.addEventListener('click', function(event) {
+                var nombreSeleccionado = event.target.textContent.trim();
+                nombreSeleccionadoDiv.textContent = `Soy ${nombreSeleccionado} y mis pasatiempos son:`;
+            });
+
+            agregarPasatiempoBtn.addEventListener('click', function() {
+                var nuevoPasatiempo = nuevoPasatiempoInput.value.trim();
+                if (nuevoPasatiempo) {
+                    var nombreSeleccionado = nombreSeleccionadoDiv.textContent.split(' ')[1];
+                    if (nombreSeleccionado) {
+                        var pasatiemposList = document.createElement('ul');
+                        var pasatiempoItem = document.createElement('li');
+                        pasatiempoItem.textContent = nuevoPasatiempo;
+                        pasatiemposList.appendChild(pasatiempoItem);
+                        nombreSeleccionadoDiv.appendChild(pasatiemposList);
+                        nuevoPasatiempoInput.value = '';
+                    } else {
+                        alert('Selecciona un nombre primero.');
+                    }
+                } else {
+                    alert('Por favor, ingresa un pasatiempo válido.');
+                }
+            });
+        });
+    </script>
+
+  <footer class="footer">
+    <a href="index.html" class="footer-link">Regresar a Inicio</a>
+   </footer>
+   
+</body>
+</html>

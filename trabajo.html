@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Trabajo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        section {
+            background-color: #fff;
+            border-radius: 15px;
+            border: 2px solid #333;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 20px auto;
+            max-width: 800px;
+            padding: 30px;
+        }
+
+        h2 {
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 30px;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        input[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 12px 20px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        #datos {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <h2>Formulario de Trabajo</h2>
+        <form id="formulario">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="ocupacion">Ocupación:</label>
+            <select id="ocupacion" name="ocupacion" required>
+                <option value="">Seleccione una opción</option>
+                <option value="gerente">Gerente</option>
+                <option value="analista">Analista</option>
+                <option value="desarrollador">Desarrollador</option>
+                <option value="Estudiante">Estudiante</option>
+                <option value="Medicina/Practicas">Practicas de medicina</option>
+                <option value="otro">Otro</option>
+            </select>
+
+            <input type="submit" value="Enviar">
+        </form>
+
+        <div id="datos"></div>
+    </section>
+
+    <script>
+        document.getElementById("formulario").addEventListener("submit", function(event) {
+            event.preventDefault(); // Evitar que el formulario se envíe
+
+            // Obtener los valores de los campos del formulario
+            var nombre = document.getElementById("nombre").value;
+            var email = document.getElementById("email").value;
+            var ocupacion = document.getElementById("ocupacion").value;
+
+            // Mostrar los datos en el elemento con id "datos"
+            var datosElemento = document.getElementById("datos");
+            datosElemento.innerHTML = "<h3>Datos Enviados:</h3>" +
+                "<p><strong>Nombre:</strong> " + nombre + "</p>" +
+                "<p><strong>Email:</strong> " + email + "</p>" +
+                "<p><strong>Ocupación:</strong> " + ocupacion + "</p>";
+        });
+    </script>    
+
+    <footer class="footer">
+     <a href="index.html" class="footer-link">Regresar a Inicio</a>
+    </footer>
+
+</body>
+</html>
+
+
+  
+
